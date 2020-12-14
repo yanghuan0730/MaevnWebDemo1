@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.ISarlaryMapper">
+<insert id="save" parameterType="com.po.Sarlary">
+insert into sarlary (eid,emoney) values(#{eid},#{emoney})
+</insert>
+<update id="update" parameterType="com.po.Sarlary">
+update sarlary set emoney=#{emoney} where eid=#{eid}
+
+</update>
+<delete id="deleById" parameterType="Integer">
+delete from  sarlary where eid=#{eid}
+
+</delete>
+<select id="findSarlary" parameterType="Integer" resultType="com.po.Sarlary" >
+select * from sarlary where eid=#{eid}
+</select>
+</mapper>
